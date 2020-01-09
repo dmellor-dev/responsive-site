@@ -100,8 +100,10 @@
 
 body {
   background: #444;
+  display: flex;
+  flex-direction: column;
   color: #fff;
-  height: 100%;
+  min-height: 100vh;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
@@ -149,7 +151,7 @@ header {
 
 main {
   padding: 4rem;
-  min-height: calc(100vh-60px); }
+  min-height: 100vh; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -206,6 +208,25 @@ main {
       border-color: #eece1a;
       transition: all 0.5s ease-out; }
 
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
+      background: #eece1a;
+      color: #000; }
+      .boxes div:hover span {
+        color: #000; }
+
 .btn, .btn-dark, .btn-light {
   display: block;
   padding: 0.5rem 1rem;
@@ -252,14 +273,20 @@ main {
     ul.menu-nav.show, div.menu-branding.show {
       transform: translate3d(0, 0, 0); }
   .menu-nav {
-    height: 75vh;
+    height: 60vh;
     transform: translate3d(-100%, 0, 0);
     font-size: 24px; }
   .menu-branding {
-    height: 25vh;
+    height: 40vh;
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
-      background: url("../img/portrait.jpg"); }
+      background: url("../img/portrait.jpg");
+      height: 300px;
+      width: 300px;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      padding: 0; }
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
     grid-template-columns: 1fr; }
